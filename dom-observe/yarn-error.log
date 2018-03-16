@@ -1,0 +1,96 @@
+Arguments: 
+  /usr/local/Cellar/node/8.1.4/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/opt/node@8/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.1.4
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "dom-observe",
+    "version": "1.0.0",
+    "description": "Observe elements in the dom",
+    "main": "dist/dom-observe.umd.js",
+    "module": "dist/dom-observe.esm.js",
+    "files": ["dist/**/*"],
+    "typings": "dist/index.d.ts",
+    "scripts": {
+      "build": "NODE_ENV=production rollup -c && NODE_ENV=development rollup -c",
+      "test": "jest --watch",
+      "test:ci": "jest --ci --silent",
+      "lint": "tslint --project ./ --fix",
+      "types": "tsc --noEmit",
+      "types:gen": "tsc",
+      "format:emit":
+      "prettier package.json .prettierrc rollup.config.js tsconfig.json tslint.json README.md \"./src/**/*.{ts,js,json}\"",
+      "format:check": "npm run format:emit -- --list-different",
+      "format": "npm run format:emit -- --write",
+      "check": "run-p format:check lint types test:ci",
+      "prepare": "npm run build -s"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/eirikurn/dom-observe.git"
+    },
+    "author": "Eirikur Nilsson <eirikur@nilsson.is>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/eirikurn/dom-observe/issues"
+    },
+    "homepage": "https://dom-observe.js.org",
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm run check"
+      }
+    },
+    "devDependencies": {
+      "@types/jest": "^22.2.0",
+      "jest": "^22.4.2",
+      "npm-run-all": "^4.1.2",
+      "prettier": "^1.11.1",
+      "rollup": "^0.56.5",
+      "rollup-plugin-commonjs": "^9.0.0",
+      "rollup-plugin-node-resolve": "^3.2.0",
+      "rollup-plugin-typescript2": "^0.12.0",
+      "rollup-plugin-uglify": "^3.0.0",
+      "ts-jest": "^22.4.1",
+      "tslint": "^5.9.1",
+      "tslint-config-prettier": "^1.9.0",
+      "typescript": "^2.7.2"
+    },
+    "dependencies": {},
+    "jest": {
+      "moduleFileExtensions": ["ts", "tsx", "js"],
+      "transform": {
+        "^.+\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      },
+      "testMatch": ["**/__tests__/*.+(ts|js)"]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  TypeError: patterns.map is not a function
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:54024:78
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:110:14
+      at Promise (<anonymous>)
+      at F (/usr/local/lib/node_modules/yarn/lib/cli.js:29389:28)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:89:12
+      at Config.resolveWorkspaces (/usr/local/lib/node_modules/yarn/lib/cli.js:54060:7)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:21998:49
+      at Generator.next (<anonymous>)

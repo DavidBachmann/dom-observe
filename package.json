@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": ["*"],
+  "scripts": {
+    "check": "wsrun check"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3"
+  }
+}
