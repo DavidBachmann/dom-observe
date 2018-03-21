@@ -1,11 +1,13 @@
 {
-  "name": "dom-observe",
+  "name": "react-dom-observe",
   "version": "1.0.0",
   "description": "Observe elements in the dom",
-  "main": "dist/dom-observe.umd.js",
-  "module": "dist/dom-observe.esm.js",
-  "files": ["dist/**/*"],
-  "types": "dist/index.d.ts",
+  "main": "dist/react-dom-observe.umd.js",
+  "module": "dist/react-dom-observe.esm.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "NODE_ENV=production rollup -c && NODE_ENV=development rollup -c",
     "test": "jest --watch",
@@ -13,11 +15,10 @@
     "lint": "tslint --project ./ --fix",
     "types": "tsc --noEmit",
     "types:gen": "tsc",
-    "format:emit":
-      "prettier package.json .prettierrc rollup.config.js tsconfig.json tslint.json README.md \"./src/**/*.{ts,js,json}\"",
+    "format:emit": "prettier package.json .prettierrc rollup.config.js tsconfig.json tslint.json README.md \"./src/**/*.{ts,js,json}\"",
     "format:check": "npm run format:emit -- --list-different",
     "format": "npm run format:emit -- --write",
-    "check": "run-p format:check lint types test:ci",
+    "check": "run-p format:check lint types",
     "prepare": "npm run build -s"
   },
   "repository": {
@@ -37,9 +38,13 @@
   },
   "devDependencies": {
     "@types/jest": "^22.2.0",
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
     "jest": "^22.4.2",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.11.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "rollup": "^0.56.5",
     "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-node-resolve": "^3.2.0",
@@ -51,14 +56,24 @@
     "typescript": "^2.7.2"
   },
   "dependencies": {
+    "dom-observe": "^1.0.0",
     "fastdom": "^1.0.8"
   },
+  "peerDependencies": {
+    "react": ">=15",
+    "react-dom": ">=15"
+  },
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js"],
-    "setupFiles": ["./jest/raf.ts"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       "^.+\\.ts$": "<rootDir>/../node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": ["**/__tests__/*.+(ts|js)"]
+    "testMatch": [
+      "**/__tests__/*.+(ts|js)"
+    ]
   }
 }
