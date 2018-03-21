@@ -55,9 +55,7 @@
   },
   "jest": {
     "moduleFileExtensions": ["ts", "tsx", "js"],
-    "setupFiles": [
-      "./jest/raf.ts"
-    ],
+    "setupFiles": ["./jest/raf.ts"],
     "transform": {
       "^.+\\.ts$": "<rootDir>/../node_modules/ts-jest/preprocessor.js"
     },

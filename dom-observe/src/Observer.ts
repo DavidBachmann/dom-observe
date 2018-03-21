@@ -2,9 +2,9 @@ import fastdom from 'fastdom'
 import { getInstance, resolve, update } from './nodes'
 
 export interface ObserverOptions {
-  onChange ?: (value: any) => void
-  context ?: object
-  debug ?: boolean
+  onChange?: (value: any) => void
+  context?: object
+  debug?: boolean
 }
 
 class Observer {

@@ -14,9 +14,9 @@ export type NodeType = 'observe' | 'event' | 'context'
 
 export class Node {
   // tslint:disable-next-line ban-types
-  public func : Function
-  public type : NodeType
-  public deps : any[]
+  public func: Function
+  public type: NodeType
+  public deps: any[]
   constructor(func, deps, type) {
     this.func = func
     this.type = type
@@ -193,7 +193,7 @@ const factory = (node, deps) => {
 
 // Updates a dependency. If newDep is a node, return a singleton node instance
 // based on its dependencies.
-export const update = (newDep, oldDep ?: Instance, observer ?: Observer) => {
+export const update = (newDep, oldDep?: Instance, observer?: Observer) => {
   // Dep can be any value as well as a node. Node is a stricter structure.
   const oldInstance = getInstance(oldDep)
   const newNode = getNode(newDep)
