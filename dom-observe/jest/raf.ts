@@ -8,6 +8,7 @@ const mockRaf = callback => {
       callback()
     })
   )
+  return 0
 }
 
 (mockRaf as any).flush = () => {
@@ -18,5 +19,4 @@ const mockRaf = callback => {
   timeouts.clear()
 }
 
-declare let global : any
-global.requestAnimationFrame = mockRaf
+window.requestAnimationFrame = mockRaf

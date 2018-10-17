@@ -4,9 +4,7 @@
   "description": "Observe elements in the dom",
   "main": "dist/react-dom-observe.umd.js",
   "module": "dist/react-dom-observe.esm.js",
-  "files": [
-    "dist/**/*"
-  ],
+  "files": ["dist/**/*"],
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "NODE_ENV=production rollup -c && NODE_ENV=development rollup -c",
@@ -15,7 +13,8 @@
     "lint": "tslint --project ./ --fix",
     "types": "tsc --noEmit",
     "types:gen": "tsc",
-    "format:emit": "prettier package.json .prettierrc rollup.config.js tsconfig.json tslint.json README.md \"./src/**/*.{ts,js,json}\"",
+    "format:emit":
+      "prettier package.json .prettierrc rollup.config.js tsconfig.json tslint.json README.md \"./src/**/*.{ts,js,json}\"",
     "format:check": "npm run format:emit -- --list-different",
     "format": "npm run format:emit -- --write",
     "check": "run-p format:check lint types",
@@ -64,16 +63,10 @@
     "react-dom": ">=15"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       "^.+\\.ts$": "<rootDir>/../node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/__tests__/*.+(ts|js)"
-    ]
+    "testMatch": ["**/__tests__/*.+(ts|js)"]
   }
 }
