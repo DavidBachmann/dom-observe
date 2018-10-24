@@ -92,7 +92,7 @@ const transformedBoundsHandler = element => {
     x: rect.left + window.scrollX,
     y: rect.top + window.scrollY,
     width: rect.width,
-    height: rect.height,
+    height: rect.height
   }
 }
 

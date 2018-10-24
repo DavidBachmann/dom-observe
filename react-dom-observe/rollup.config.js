@@ -10,7 +10,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 const plugins = [
   typescript({ useTsconfigDeclarationDir: false }),
   commonjs(),
-  resolve(),
+  resolve()
 ]
 
 if (isProduction) {
@@ -29,19 +29,19 @@ export default {
       globals: {
         react: 'React',
         'react-dom': 'ReactDOM',
-        'dom-observe': 'domObserve',
+        'dom-observe': 'domObserve'
       }
     },
     {
       file: `./dist/dom-observe${isProduction ? '.min' : ''}.esm.js`,
       format: 'es',
       sourcemap: !isProduction,
-      exports: 'named',
-    },
+      exports: 'named'
+    }
   ],
   external: ['react', 'react-dom'],
   watch: {
-    include: 'src/**',
+    include: 'src/**'
   },
-  plugins,
+  plugins
 }

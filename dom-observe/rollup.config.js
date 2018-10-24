@@ -10,7 +10,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 const plugins = [
   typescript({ useTsconfigDeclarationDir: false }),
   commonjs(),
-  resolve(),
+  resolve()
 ]
 
 if (isProduction) {
@@ -27,19 +27,19 @@ export default {
       sourcemap: !isProduction,
       exports: 'named',
       globals: {
-        fastdom: 'fastdom',
+        fastdom: 'fastdom'
       }
     },
     {
       file: `./dist/dom-observe${isProduction ? '.min' : ''}.esm.js`,
       format: 'es',
       sourcemap: !isProduction,
-      exports: 'named',
-    },
+      exports: 'named'
+    }
   ],
   external: ['fastdom'],
   watch: {
-    include: 'src/**',
+    include: 'src/**'
   },
-  plugins,
+  plugins
 }

@@ -1,17 +1,19 @@
 {
   "private": true,
   "workspaces": [
-    "*"
+    "dom-observe",
+    "react-dom-observe"
   ],
   "scripts": {
     "build": "wsrun 'run build'",
     "start": "yarn run build && start-storybook -p 3001 -c .storybook",
-    "check": "wsrun 'run check'"
+    "check": "wsrun 'run check'",
+    "format": "wsrun 'run format'"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
     "@storybook/react": "4.0.0-rc.2",
     "awesome-typescript-loader": "^5.2.1",

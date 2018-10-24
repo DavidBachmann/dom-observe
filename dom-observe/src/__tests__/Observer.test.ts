@@ -12,7 +12,7 @@ const mockSubscribe = () => {
         sub.mock.calls[0][0]()
       }
     },
-    unsubscribe,
+    unsubscribe
   }
 }
 
@@ -100,7 +100,7 @@ describe('Observer', () => {
     let subscription = mockSubscribe()
     let onChange = jest.fn()
     observer = new Observer(subscription.dep, {
-      onChange,
+      onChange
     })
 
     // Original values.
@@ -123,7 +123,7 @@ describe('Observer', () => {
     subscription = mockSubscribe()
     onChange = jest.fn()
     observer = new Observer(subscription.dep, {
-      onChange,
+      onChange
     })
 
     // Original values.
@@ -148,7 +148,7 @@ describe('Observer', () => {
     const subscription = mockSubscribe()
     const onChange = jest.fn()
     const observer1 = new Observer(subscription.dep, {
-      onChange,
+      onChange
     })
     const observer2 = new Observer(subscription.dep)
 

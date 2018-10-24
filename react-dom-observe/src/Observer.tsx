@@ -5,7 +5,7 @@ import { findDOMNode } from 'react-dom'
 export interface Props {
   children: (value: any) => any
   debug?: boolean
-  defaultValue: any
+  defaultValue?: any
   onChange?: (value: any) => void
   value: any
 }
