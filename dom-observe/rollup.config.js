@@ -3,7 +3,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
 import uglify from 'rollup-plugin-uglify'
 
-const libraryName = 'dom-observe'
+const libraryName = 'DomObserve'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -25,14 +25,19 @@ export default {
       name: libraryName,
       format: 'umd',
       sourcemap: !isProduction,
+      exports: 'named',
+      globals: {
+        fastdom: 'fastdom',
+      }
     },
     {
       file: `./dist/dom-observe${isProduction ? '.min' : ''}.esm.js`,
       format: 'es',
       sourcemap: !isProduction,
+      exports: 'named',
     },
   ],
-  external: [],
+  external: ['fastdom'],
   watch: {
     include: 'src/**',
   },

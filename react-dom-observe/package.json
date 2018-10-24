@@ -30,11 +30,6 @@
     "url": "https://github.com/eirikurn/dom-observe/issues"
   },
   "homepage": "https://dom-observe.js.org",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run check"
-    }
-  },
   "devDependencies": {
     "@types/jest": "^22.2.0",
     "@types/react": "^16.0.40",
@@ -42,8 +37,8 @@
     "jest": "^22.4.2",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.11.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
     "rollup": "^0.56.5",
     "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-node-resolve": "^3.2.0",
@@ -55,8 +50,7 @@
     "typescript": "^2.7.2"
   },
   "dependencies": {
-    "dom-observe": "^1.0.0",
-    "fastdom": "^1.0.8"
+    "dom-observe": "^1.0.0"
   },
   "peerDependencies": {
     "react": ">=15",
