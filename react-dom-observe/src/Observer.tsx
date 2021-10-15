@@ -1,6 +1,6 @@
-import BaseObserver from 'dom-observe'
-import { Component } from 'react'
-import { findDOMNode } from 'react-dom'
+import { Component } from "react"
+import { findDOMNode } from "react-dom"
+import BaseObserver from "dom-observe"
 
 export interface Props {
   children: (value: any) => any
@@ -8,12 +8,14 @@ export interface Props {
   defaultValue?: any
   onChange?: (value: any) => void
   value: any
+  context: any
 }
 
 class Observer extends Component<Props> {
   public static defaultProps = {
     debug: false,
     defaultValue: false,
+    context: {},
   }
   public state = {
     value: this.props.defaultValue,
@@ -28,6 +30,7 @@ class Observer extends Component<Props> {
       onChange: this.onChange,
       context: {
         rootElement: findDOMNode(this),
+        ...this.props.context,
       },
     })
   }
@@ -44,13 +47,13 @@ class Observer extends Component<Props> {
 
   public render() {
     const { children } = this.props
-    if (typeof children === 'function') {
+    if (typeof children === "function") {
       return children(this.state.value)
     }
     return children
   }
 
-  private onChange = value => {
+  private onChange = (value) => {
     if (!this.isMounted) {
       return
     }
